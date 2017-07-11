@@ -1,0 +1,198 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg2"
+    tools:context=".MainActivity" >
+
+    <!-- 设置频率与信号显示 -->
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp">
+        
+        <ImageButton 
+            android:id="@+id/setFreq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/menu_auto_search"
+            />
+        
+        <ImageView 
+            android:id="@+id/setSignal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/signal"/>
+        
+        <TextView 
+            android:id="@+id/adc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="20sp"
+            android:text="0"/>
+        
+    </RelativeLayout>
+    
+    <!-- 显示当前频率 -->
+    <RelativeLayout 
+       android:layout_width="match_parent"
+       android:layout_height="120dp"
+       android:layout_marginTop="10dp">
+       
+        <TextView
+            android:id="@+id/freq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="87.5"
+            android:textSize="100sp"
+        	android:typeface="serif"
+        	android:textStyle="bold"
+        	android:shadowColor="#30000000"
+        	android:shadowDx="8"
+        	android:shadowDy="8"
+        	android:shadowRadius="1"/>
+        
+         <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_toLeftOf="@id/freq"
+           android:layout_marginRight="35dp"
+           android:layout_marginTop="40dp"
+           android:textSize="30sp"
+           android:typeface="serif"
+           android:text="FM"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/freq"
+           	android:layout_alignParentBottom="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="20dp"
+            android:typeface="serif"
+            android:text="MHz"
+            android:textSize="55sp" />
+        
+    </RelativeLayout>
+    
+	<!-- 手动搜索与全频道显示 -->
+	<RelativeLayout 
+	    android:id="@+id/relat"
+	    android:layout_width="match_parent"
+	    android:layout_height="200dp"
+	    android:layout_marginTop="60dp"
+	    android:layout_marginRight="80dp"
+       	android:layout_marginLeft="80dp">
+	    
+	    <ImageView 
+	        android:id="@+id/freqShow"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+	        android:layout_alignParentBottom="true"
+	        android:src="@drawable/freq_bg"/>
+	    
+	    <ImageView 
+	        android:id="@+id/freq_bar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:src="@drawable/bar"/>
+	    
+	    <ImageButton 
+	        android:id="@+id/down"
+	        android:layout_width="wrap_content"
+	        android:layout_height="70dp"
+	        android:layout_toLeftOf="@id/freqShow"
+	        android:layout_alignParentBottom="true"
+	        android:src="@drawable/prefreq"
+	        />
+	    <ImageButton 
+	        android:id="@+id/search_down"
+	        android:layout_width="wrap_content"
+	        android:layout_height="70dp"
+	        android:layout_toLeftOf="@id/down"
+	        android:layout_marginLeft="15dp"
+	        android:layout_alignParentBottom="true"
+	        android:src="@drawable/ic_previous_nor"/>
+	    
+	    <ImageButton 
+	        android:id="@+id/up"
+	        android:layout_width="wrap_content"
+	        android:layout_height="70dp"
+	        android:layout_toRightOf="@id/freqShow"
+	        android:layout_alignParentBottom="true"
+	        android:src="@drawable/nextfreq"
+	        />
+	    <ImageButton 
+	        android:id="@+id/search_up"
+	        android:layout_width="wrap_content"
+	        android:layout_height="70dp"
+	        android:layout_toRightOf="@id/up"
+	        android:layout_marginLeft="15dp"
+	        android:layout_alignParentBottom="true"
+	        android:src="@drawable/ic_next_nor"/>
+	    
+	    
+	</RelativeLayout>
+    
+	<!-- Button(静音、自动搜索、保存电台、可用电台菜单) -->
+	<RelativeLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+       	android:layout_marginLeft="155dp"
+       	android:layout_marginTop="100dp">
+	    
+	    <Button 
+	        android:id="@+id/save"
+	        android:layout_width="wrap_content"
+	        android:layout_height="55dp"
+	        android:text="保存频道"/>
+	    
+	    <Button 
+	        android:id="@+id/autoSearch"
+	        android:layout_width="wrap_content"
+	        android:layout_height="55dp"
+	        android:layout_toRightOf="@id/save"
+	        android:layout_marginLeft="130dp"
+	        android:text="自动搜索"/>
+	    
+	    <Button
+	        android:id="@+id/mute"
+	        android:layout_width="wrap_content"
+	        android:layout_height="55dp"
+	        android:layout_toRightOf="@id/autoSearch"
+	        android:layout_marginLeft="130dp"
+	        android:text="静音模式"/>
+	    
+	     <Button
+	        android:id="@+id/play"
+	        android:layout_width="wrap_content"
+	        android:layout_height="55dp"
+	        android:layout_toRightOf="@id/mute"
+	        android:layout_marginLeft="130dp"
+	        android:text="打开声音"/>
+	    
+	    <Button 
+	        android:id="@+id/menu"
+	        android:layout_width="wrap_content"
+	        android:layout_height="55dp"
+	        android:layout_toRightOf="@id/play"
+	        android:layout_marginLeft="130dp"
+	        android:layout_marginBottom="10dp"
+	        android:layout_centerVertical="true"
+	        android:text="已存电台"/>
+	</RelativeLayout>
+   
+</LinearLayout>
